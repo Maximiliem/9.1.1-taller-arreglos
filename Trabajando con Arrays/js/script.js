@@ -39,4 +39,17 @@ function showList(array) {
 document.addEventListener("DOMContentLoaded", (e) => {
   // Escribe tu solución aquí
   // Sugerencia de cómo mostrar el array => showList(strangeArray);
+  
+  // Hago una función que recibe como parámetro el strangeArray y devuelve un array con los strings
+  function filtroStrings(array){
+    return array.filter((element) => typeof element === "string");
+  }
+  
+  // En esta constante filtro y ordeno alfabéticamente los strings
+  // Con la función localeCompare() se realiza una comparaicón sensible entre mayúsculas y minúsculas que permite que el string "b is a letter" no se ubique al final de los strings. 
+  const strings = filtroStrings(strangeArray).sort((a, b) => a.localeCompare(b));
+
+  // Muestro los strings en el HTML
+  showList(strings);
+
 });
